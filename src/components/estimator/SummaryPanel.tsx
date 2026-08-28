@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Copy, Check, Printer } from "lucide-react";
+import { Copy, Check } from "lucide-react";
 import { PHP, type Estimate } from "../../lib/pricing";
 import { useCountUp } from "../../lib/ui";
 import { MessengerIcon } from "../../lib/icons";
@@ -106,13 +106,6 @@ export function SummaryPanel({ estimate }: { estimate: Estimate }) {
             Send to ELBI
           </a>
         </div>
-        <button
-          onClick={() => window.print()}
-          className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-cream/20 px-4 py-2.5 text-[12.5px] text-cream/70 hover:border-oak-tint hover:text-oak-tint transition-all"
-        >
-          <Printer size={14} />
-          Print / save as PDF
-        </button>
         <p className="pt-2 text-[10.5px] leading-relaxed text-cream/40">
           Indicative estimate only — excludes appliances, sink & tap, plumbing and electrical
           works. Final quotation is confirmed after an on-site survey.

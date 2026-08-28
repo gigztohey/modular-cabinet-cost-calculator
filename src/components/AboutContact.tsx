@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent } from "react";
-import { Check, ClipboardCheck, Send, ArrowUpRight, ShieldCheck, ArrowRight } from "lucide-react";
+import { Check, ClipboardCheck, Send, ArrowUpRight, ShieldCheck, ArrowRight, Phone } from "lucide-react";
 import { Eyebrow, Reveal } from "../lib/ui";
 import { FacebookIcon, MessengerIcon } from "../lib/icons";
 
@@ -211,6 +211,45 @@ export function Contact() {
                     <span className="block font-mono text-[10.5px] text-oak-deep/80 mt-0.5">Get an instant estimate above</span>
                   </span>
                 </a>
+                {/* easy call button — requested: 09154082813 | 09936932883 */}
+                <a
+                  href="tel:09154082813"
+                  className="flex items-center gap-3.5 rounded-2xl border border-ink/10 bg-ink px-5 py-4 hover:bg-ink/90 transition-all group"
+                >
+                  <span className="grid place-items-center w-10 h-10 rounded-full bg-oak text-cream group-hover:bg-oak-deep transition-colors shrink-0">
+                    <Phone size={17} />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-[13px] font-semibold text-cream flex items-center gap-1.5">
+                      <span className="grid place-items-center w-4 h-4 rounded-full border border-cream/20 text-[9px]">◉</span>
+                      CONTACT
+                    </span>
+                    <span className="block font-mono text-[11px] font-medium text-cream tracking-wide mt-0.5">
+                      <span className="hover:text-oak-tint transition-colors">09154082813</span>
+                      <span className="text-cream/40 mx-1.5">|</span>
+                      <span className="hover:text-oak-tint transition-colors">09936932883</span>
+                    </span>
+                  </span>
+                  <span className="ml-auto grid place-items-center w-8 h-8 rounded-full bg-cream/10 group-hover:bg-cream/15 transition-colors shrink-0">
+                    <ArrowUpRight size={14} className="text-cream" />
+                  </span>
+                </a>
+                <div className="flex gap-2">
+                  <a
+                    href="tel:09154082813"
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-oak text-cream px-4 py-3 text-[13px] font-semibold hover:bg-oak-deep transition-colors"
+                  >
+                    <Phone size={14} />
+                    Call 0915 408 2813
+                  </a>
+                  <a
+                    href="tel:09936932883"
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-cream px-4 py-3 text-[13px] font-semibold hover:border-oak hover:text-oak-deep transition-all"
+                  >
+                    <Phone size={14} />
+                    Call 0993 693 2883
+                  </a>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -218,11 +257,8 @@ export function Contact() {
           {/* form — now sends via email to both addresses */}
           <Reveal delay={160}>
             <div className="rounded-3xl border border-line bg-ink text-cream p-7 md:p-9">
-              <p className="font-mono text-[10.5px] tracking-[0.26em] uppercase text-cream/45 mb-1">
+              <p className="font-mono text-[10.5px] tracking-[0.26em] uppercase text-cream/45 mb-7">
                 Project inquiry · response within 24h
-              </p>
-              <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-oak-tint/90 mb-7">
-                Sent to giangowzxc@gmail.com & ryancuevas53@gmail.com
               </p>
 
               {formState === "success" ? (
@@ -381,9 +417,7 @@ export function Contact() {
                   </button>
 
                   <p className="text-center text-[11px] text-cream/40 leading-relaxed">
-                    No commitments, no spam — replies go to <span className="text-cream/60">giangowzxc@gmail.com</span> &amp;{" "}
-                    <span className="text-cream/60">ryancuevas53@gmail.com</span>. We reply with the next step and possible survey
-                    schedule.
+                    No commitments, no spam — we reply with the next step and possible survey schedule.
                   </p>
                 </form>
               )}

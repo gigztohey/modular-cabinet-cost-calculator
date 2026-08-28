@@ -25,7 +25,7 @@ export default function Works() {
             <h2 className="font-display font-medium tracking-[-0.02em] leading-[1.04] text-[clamp(2rem,4.4vw,3.5rem)]">
               Straight from our sites —
               <br />
-              <em className="italic font-light text-oak">never stock photos.</em>
+              <em className="italic font-light text-oak">authentic builds, made to measure.</em>
             </h2>
           </Reveal>
           <Reveal delay={110}>

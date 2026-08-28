@@ -1,4 +1,4 @@
-import { MapPin, ShieldCheck } from "lucide-react";
+import { MapPin, ShieldCheck, Phone } from "lucide-react";
 import { FacebookIcon, MessengerIcon } from "../lib/icons";
 
 export default function Footer() {
@@ -59,6 +59,18 @@ export default function Footer() {
             <li className="flex items-start gap-2">
               <MapPin size={14} className="mt-0.5 shrink-0 text-oak" />
               Los Baños, Laguna · Philippines
+            </li>
+            <li className="flex items-start gap-2">
+              <Phone size={14} className="mt-0.5 shrink-0 text-oak" />
+              <span className="flex flex-wrap gap-x-2">
+                <a href="tel:09154082813" className="hover:text-oak-deep transition-colors font-medium">
+                  09154082813
+                </a>
+                <span className="text-faint">|</span>
+                <a href="tel:09936932883" className="hover:text-oak-deep transition-colors font-medium">
+                  09936932883
+                </a>
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <ShieldCheck size={14} className="mt-0.5 shrink-0 text-oak" />

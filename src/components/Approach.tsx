@@ -50,7 +50,7 @@ export default function Approach() {
                   href="#about"
                   className="group mt-8 inline-flex items-center gap-2 text-[14px] font-medium text-oak-deep"
                 >
-                  Why choose ELBI
+                  ELBI Modular
                   <span className="grid place-items-center w-7 h-7 rounded-full border border-oak/30 group-hover:bg-oak group-hover:text-cream group-hover:border-oak transition-all">
                     <ArrowRight size={13} />
                   </span>

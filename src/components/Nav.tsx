@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Calculator, Menu, X } from "lucide-react";
+import { Calculator, Menu, X, Phone } from "lucide-react";
 import { FacebookIcon } from "../lib/icons";
 
 const LINKS = [
@@ -63,6 +63,13 @@ export default function Nav() {
 
           <div className="flex items-center gap-3">
             <a
+              href="tel:09154082813"
+              className="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium px-4 py-2.5 rounded-full border border-ink/15 hover:border-oak hover:text-oak-deep transition-all"
+            >
+              <Phone size={14} />
+              <span className="font-mono text-[11px] tracking-wide">09154082813 | 09936932883</span>
+            </a>
+            <a
               href="#estimator"
               className="hidden sm:inline-flex items-center gap-2 text-[13px] font-medium px-4 py-2.5 rounded-full border border-ink/15 hover:border-oak hover:text-oak-deep transition-all"
             >
@@ -102,6 +109,25 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
+          <div className="pt-3 mt-3 border-t border-line/60 grid grid-cols-2 gap-2">
+            <a
+              href="tel:09154082813"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-oak text-cream px-4 py-3 text-[13px] font-semibold"
+            >
+              <Phone size={14} />
+              09154082813
+            </a>
+            <a
+              href="tel:09936932883"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 px-4 py-3 text-[13px] font-semibold"
+            >
+              <Phone size={14} />
+              09936932883
+            </a>
+          </div>
+          <p className="text-center font-mono text-[10px] tracking-wide text-faint pt-1">CONTACT: Tap to call</p>
         </div>
       )}
     </header>
