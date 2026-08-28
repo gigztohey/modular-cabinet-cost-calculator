@@ -50,7 +50,7 @@ export default function Process() {
                 <div className="mt-9 flex gap-8 max-w-md">
                   {[
                     { k: "3 – 4 wks", v: "typical lead time to handover" },
-                    { k: "1 yr", v: "workmanship warranty" },
+                    { k: "Fitted on site", v: "aligned & checked before turnover" },
                   ].map((s) => (
                     <div key={s.k} className="border-t border-ink/15 pt-4 flex-1">
                       <p className="font-display text-[22px] font-semibold">{s.k}</p>

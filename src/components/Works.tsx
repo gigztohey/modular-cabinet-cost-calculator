@@ -7,7 +7,7 @@ import { FacebookIcon } from "../lib/icons";
 const TRUST = [
   { icon: BadgeCheck, label: "Crafting cabinets since 2010" },
   { icon: Ruler, label: "Made to measure · ±2 mm precision" },
-  { icon: ShieldCheck, label: "12-month workmanship warranty" },
+  { icon: ShieldCheck, label: "Checked & fitted before turnover" },
 ];
 
 export default function Works() {

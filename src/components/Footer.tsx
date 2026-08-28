@@ -72,7 +72,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <ShieldCheck size={14} className="mt-0.5 shrink-0 text-oak" />
-              1-year workmanship warranty
+              Checked, fitted & finished on site
             </li>
           </ul>
         </div>
