@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Calculator, Menu, X, Phone } from "lucide-react";
 import { FacebookIcon } from "../lib/icons";
+import { ElbiLogo } from "../lib/ElbiLogo";
 
 const LINKS = [
   { href: "#approach", label: "Our approach" },
@@ -29,27 +30,13 @@ export default function Nav() {
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-[74px]">
-          {/* logo */}
-          <a href="#top" className="flex items-center gap-3 group">
-            <span className="grid place-items-center w-9 h-9 rounded-[10px] bg-ink text-cream transition-transform duration-500 group-hover:rotate-90">
-              {/* cabinet module glyph */}
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <rect x="1.5" y="1.5" width="15" height="15" rx="2" stroke="currentColor" strokeWidth="1.4" />
-                <path d="M9 1.5v15M1.5 9H9" stroke="currentColor" strokeWidth="1.4" />
-                <circle cx="5.25" cy="12" r="0.9" fill="currentColor" />
-                <circle cx="12.75" cy="5.25" r="0.9" fill="currentColor" />
-              </svg>
-            </span>
-            <span className="leading-none">
-              <span className="block font-display font-semibold text-[17px] tracking-tight">ELBI Modular</span>
-              <span className="block font-mono text-[9.5px] tracking-[0.28em] uppercase text-faint mt-1">
-                Cabinets · PH
-              </span>
-            </span>
+          {/* logo — new ELBI mark */}
+          <a href="#top" className="flex items-center gap-3 group shrink-0">
+            <ElbiLogo variant="light" size="md" className="group-hover:opacity-90 transition-opacity" />
           </a>
 
           {/* desktop links */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-7">
             {LINKS.map((l) => (
               <a
                 key={l.href}
@@ -71,10 +58,10 @@ export default function Nav() {
             </a>
             <a
               href="#estimator"
-              className="hidden sm:inline-flex items-center gap-2 text-[13px] font-medium px-4 py-2.5 rounded-full border border-ink/15 hover:border-oak hover:text-oak-deep transition-all"
+              className="hidden sm:inline-flex items-center gap-2 text-[13px] font-medium px-4 py-2.5 rounded-full border border-ink/15 hover:border-oak hover:text-oak-deep transition-all whitespace-nowrap shrink-0 leading-none"
             >
-              <Calculator size={15} strokeWidth={2.2} />
-              Estimate now
+              <Calculator size={15} strokeWidth={2.2} className="shrink-0" />
+              <span className="whitespace-nowrap">Estimate now</span>
             </a>
             <a
               href="https://www.facebook.com/Elbimodular"

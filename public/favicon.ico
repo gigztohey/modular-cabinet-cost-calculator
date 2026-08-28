@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#1f1b14"/>
+  <!-- 3 cabinets - white -->
+  <g fill="none" stroke="#faf7f0" stroke-width="3.2" stroke-linecap="square">
+    <path d="M10 22 H23 V48 H10 Z"/>
+    <path d="M10 38 H23"/>
+    <path d="M25.5 10 H38.5 V48 H25.5 Z"/>
+    <path d="M25.5 38 H38.5"/>
+    <path d="M41 18 H54 V48 H41 Z"/>
+    <path d="M41 38 H54"/>
+  </g>
+</svg>
