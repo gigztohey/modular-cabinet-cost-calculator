@@ -51,6 +51,11 @@ export default function Footer() {
                 <MessengerIcon size={14} /> m.me/Elbimodular
               </a>
             </li>
+            <li>
+              <a href="https://www.facebook.com/ryan.h.cuevas" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-ink-soft hover:text-oak-deep transition-colors">
+                <FacebookIcon size={14} /> Creator: Ryan H. Cuevas
+              </a>
+            </li>
           </ul>
         </div>
         <div>
@@ -84,7 +89,12 @@ export default function Footer() {
           <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-faint">
             © {new Date().getFullYear()} ELBI Modular · Estimates indicative, subject to site survey
           </p>
-          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-faint">Made in Laguna, PH</p>
+          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-faint">
+            Made in Laguna, PH · Creator{" "}
+            <a href="https://www.facebook.com/ryan.h.cuevas" target="_blank" rel="noreferrer" className="underline hover:text-oak-deep">
+              Ryan H. Cuevas
+            </a>
+          </p>
         </div>
       </div>
     </footer>

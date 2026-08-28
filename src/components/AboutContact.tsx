@@ -9,7 +9,7 @@ function genChallenge() {
   return { a, b, answer: a + b };
 }
 
-/* --------------------------- 05 · about ELBI ------------------------ */
+/* --------------------------- 05 · our story + about --------------- */
 
 const ABOUT_POINTS = [
   "Solutions planned for your actual space",
@@ -19,52 +19,131 @@ const ABOUT_POINTS = [
 
 export function About() {
   return (
-    <section id="about" className="no-print py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div>
-            <Reveal>
-              <Eyebrow index="05">About ELBI</Eyebrow>
-              <p className="font-mono text-[11px] tracking-[0.25em] uppercase text-faint mb-4">
-                Craftsmanship meets function
-              </p>
-              <h2 className="font-display font-medium tracking-[-0.02em] leading-[1.04] text-[clamp(2rem,4.4vw,3.5rem)]">
-                We care about the details you see —
-                <em className="italic font-light text-oak"> and the ones you don&apos;t.</em>
-              </h2>
-            </Reveal>
-          </div>
-          <div className="lg:pt-24">
-            <Reveal delay={120}>
-              <p className="text-[15.5px] leading-relaxed text-ink-soft">
-                From clean cabinet lines to doors that align properly, we approach every job
-                with practical thinking and careful workmanship. The goal is simple: cabinetry
-                that fits the room, supports your routine, and feels finished.
-              </p>
-              <ul className="mt-7 space-y-3.5">
-                {ABOUT_POINTS.map((p) => (
-                  <li key={p} className="flex items-center gap-3 text-[14.5px] text-ink">
-                    <span className="grid place-items-center w-6 h-6 rounded-full bg-oak-tint text-oak-deep shrink-0">
-                      <Check size={13} strokeWidth={3} />
+    <>
+      {/* Story: garage 2010 → small corporation */}
+      <section id="about" className="no-print py-20 md:py-28 bg-cream">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-start">
+            <div>
+              <Reveal>
+                <Eyebrow index="05">Our story</Eyebrow>
+                <p className="font-mono text-[11px] tracking-[0.25em] uppercase text-faint mb-4">
+                  Since 2010 · Los Baños, Laguna
+                </p>
+                <h2 className="font-display font-medium tracking-[-0.02em] leading-[1.04] text-[clamp(2rem,4.4vw,3.5rem)]">
+                  From a small garage
+                  <br />
+                  <em className="italic font-light text-oak">to a small corporation.</em>
+                </h2>
+              </Reveal>
+              <Reveal delay={110}>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-line bg-sand/60 px-4 py-2 font-mono text-[10.5px] tracking-wide text-ink-soft">
+                    <span className="w-2 h-2 rounded-full bg-oak" /> Est. 2010
+                  </span>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-line bg-sand/60 px-4 py-2 font-mono text-[10.5px] tracking-wide text-ink-soft">
+                    Garage → workshop → corporation
+                  </span>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-line bg-sand/60 px-4 py-2 font-mono text-[10.5px] tracking-wide text-ink-soft">
+                    15+ years of hard work
+                  </span>
+                </div>
+              </Reveal>
+            </div>
+
+            <div className="lg:pt-2">
+              <Reveal delay={120}>
+                <p className="text-[15.5px] leading-relaxed text-ink-soft">
+                  ELBI Modular started in <strong className="font-semibold text-ink">2010 in a small garage</strong> — a few
+                  hand tools, long days, and a commitment to do every job right. Through hard work and
+                  word-of-mouth, we grew into a <strong className="font-semibold text-ink">small corporation with a streamlined workflow</strong> that
+                  makes everything <em className="italic text-oak">simpler</em> for clients: clear instant estimates, guided material
+                  &amp; finish choices, and one team from planning through installation.
+                </p>
+                <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
+                  That simplicity attracts clients — homes that feel more organized, businesses that open
+                  sooner, and spaces that actually work for real life. We care about the details you see,
+                  and the ones you don&apos;t: clean lines, doors that align, lasting finishes.
+                </p>
+                <ul className="mt-7 space-y-3.5">
+                  {ABOUT_POINTS.map((p) => (
+                    <li key={p} className="flex items-center gap-3 text-[14.5px] text-ink">
+                      <span className="grid place-items-center w-6 h-6 rounded-full bg-oak-tint text-oak-deep shrink-0">
+                        <Check size={13} strokeWidth={3} />
+                      </span>
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+
+              {/* Architects / Engineers commission CTA */}
+              <Reveal delay={180}>
+                <div className="mt-8 rounded-3xl border border-oak/20 bg-oak-tint/40 p-6 md:p-7">
+                  <p className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-oak-deep">For architects &amp; engineers</p>
+                  <h3 className="mt-2 font-display text-[18px] font-semibold tracking-tight text-ink">
+                    Let&apos;s collaborate — commission available.
+                  </h3>
+                  <p className="mt-2 text-[13.5px] leading-relaxed text-ink-soft">
+                    If you&apos;re an architect, engineer, or contractor in the same field and have a client
+                    who needs modular cabinets, we&apos;d love to partner. We offer a{" "}
+                    <strong className="font-semibold text-ink">commission for referred projects</strong> that move forward.
+                    Just send us the details and we&apos;ll handle the rest — clean, on-spec, on time.
+                  </p>
+                  <a
+                    href="#quote"
+                    className="group mt-4 inline-flex items-center gap-2 rounded-full bg-ink text-cream px-5 py-2.5 text-[13.5px] font-medium hover:bg-oak-deep transition-colors"
+                  >
+                    Partner with ELBI
+                    <span className="grid place-items-center w-7 h-7 rounded-full bg-cream/15 group-hover:translate-x-0.5 transition-transform">
+                      <ArrowUpRight size={14} />
                     </span>
-                    {p}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#quote"
-                className="group mt-9 inline-flex items-center gap-3 bg-ink text-cream pl-6 pr-2.5 py-2.5 rounded-full text-[14px] font-medium hover:bg-oak-deep transition-colors duration-300"
-              >
-                Request a consultation
-                <span className="grid place-items-center w-9 h-9 rounded-full bg-cream/15 group-hover:translate-x-0.5 transition-transform">
-                  <ArrowUpRight size={15} />
-                </span>
-              </a>
-            </Reveal>
+                  </a>
+                </div>
+              </Reveal>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Creator: Ryan H Cuevas */}
+      <section id="creator" className="no-print py-12 md:py-16 border-y border-line bg-sand/40">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <Reveal>
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 rounded-3xl border border-line bg-cream p-6 md:p-8 shadow-[0_20px_40px_-24px_rgba(31,27,20,0.18)]">
+              <div className="flex items-center gap-4 min-w-0 flex-1">
+                <div className="grid place-items-center w-14 h-14 rounded-2xl bg-ink text-cream font-display font-bold text-[18px] shrink-0">
+                  RC
+                </div>
+                <div className="min-w-0">
+                  <p className="font-mono text-[10px] tracking-[0.24em] uppercase text-faint">Creator &amp; Founder</p>
+                  <h3 className="font-display text-[20px] font-semibold tracking-tight text-ink leading-none mt-1">
+                    Ryan H. Cuevas
+                  </h3>
+                  <p className="text-[13px] text-ink-soft mt-1">ELBI Modular · Since 2010</p>
+                </div>
+              </div>
+              <div className="flex-1 min-w-0 md:border-l md:border-line md:pl-8">
+                <p className="text-[13.5px] leading-relaxed text-ink-soft">
+                  Built from a garage with hard work and a focus on making things simpler for every client.
+                  Reach out directly — always happy to talk builds and collaborations.
+                </p>
+                <a
+                  href="https://www.facebook.com/ryan.h.cuevas"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex items-center gap-2.5 rounded-full bg-[#0866FF] text-white px-5 py-2.5 text-[13.5px] font-semibold hover:bg-[#0652cc] transition-colors"
+                >
+                  <FacebookIcon size={16} />
+                  facebook.com/ryan.h.cuevas
+                  <ArrowUpRight size={14} />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -327,7 +406,7 @@ export function Contact() {
                         name="project-type"
                         required
                         defaultValue="Kitchen"
-                        className={`${inputCls} ${darkInputCls}`}
+                        className={`${inputCls} ${darkInputCls} dark-select`}
                       >
                         <option>Kitchen</option>
                         <option>Wardrobe</option>
@@ -339,7 +418,7 @@ export function Contact() {
                     </label>
                     <label className="block">
                       <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream/45 mb-1.5 block">Budget</span>
-                      <select name="budget" defaultValue="" className={`${inputCls} ${darkInputCls}`}>
+                      <select name="budget" defaultValue="" className={`${inputCls} ${darkInputCls} dark-select`}>
                         <option value="">Not sure yet</option>
                         <option>Under ₱100,000</option>
                         <option>₱100,000–₱250,000</option>

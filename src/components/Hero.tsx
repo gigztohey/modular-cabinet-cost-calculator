@@ -75,9 +75,6 @@ export default function Hero() {
                 className="w-full h-[400px] md:h-[520px] object-cover hover:scale-[1.03] transition-transform duration-[1400ms]"
               />
             </div>
-            <p className="absolute top-4 left-1/2 -translate-x-1/2 z-10 rounded-full bg-ink/70 backdrop-blur px-3.5 py-1.5 font-mono text-[9px] tracking-[0.2em] uppercase text-cream/85">
-              Actual ELBI project
-            </p>
             <div className="floaty absolute -left-4 md:-left-8 bottom-16 bg-cream/95 backdrop-blur border border-line rounded-2xl px-4 py-3 shadow-xl">
               <p className="font-mono text-[9.5px] tracking-[0.2em] uppercase text-faint">Instant estimate</p>
               <p className="font-display text-[19px] font-semibold mt-0.5">

@@ -64,10 +64,10 @@ export default function Nav() {
           <div className="flex items-center gap-3">
             <a
               href="tel:09154082813"
-              className="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium px-4 py-2.5 rounded-full border border-ink/15 hover:border-oak hover:text-oak-deep transition-all"
+              className="hidden lg:inline-flex items-center gap-2 text-[13px] font-medium px-4 py-2.5 rounded-full border border-ink/15 hover:border-oak hover:text-oak-deep transition-all whitespace-nowrap leading-none"
             >
-              <Phone size={14} />
-              <span className="font-mono text-[11px] tracking-wide">09154082813 | 09936932883</span>
+              <Phone size={14} className="shrink-0" />
+              <span className="font-mono text-[11px] tracking-wide">09154082813&nbsp;|&nbsp;09936932883</span>
             </a>
             <a
               href="#estimator"
