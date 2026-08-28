@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f4efe6;
+  --color-cream: #faf7f0;
+  --color-sand: #eae2d3;
+  --color-ink: #1f1b14;
+  --color-ink-soft: #57503f;
+  --color-faint: #8a8171;
+  --color-oak: #a25b2e;
+  --color-oak-deep: #7c3f1a;
+  --color-oak-tint: #f3e2cf;
+  --color-moss: #4a5340;
+  --color-line: #ddd3c0;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 88px;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-oak);
+  color: var(--color-cream);
+}
+
+/* ---------- grain / texture ---------- */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ---------- reveal on scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.9s var(--ease-spring),
+    transform 0.9s var(--ease-spring);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- custom range slider ---------- */
+input[type="range"].lm-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  outline: none;
+  background: linear-gradient(
+    to right,
+    var(--color-oak) 0%,
+    var(--color-oak) var(--fill, 50%),
+    var(--color-line) var(--fill, 50%),
+    var(--color-line) 100%
+  );
+  cursor: pointer;
+}
+input[type="range"].lm-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  border: 2.5px solid var(--color-oak);
+  box-shadow: 0 2px 8px rgba(31, 27, 20, 0.25);
+  transition: transform 0.15s ease;
+}
+input[type="range"].lm-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+input[type="range"].lm-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  border: 2.5px solid var(--color-oak);
+  box-shadow: 0 2px 8px rgba(31, 27, 20, 0.25);
+}
+
+/* ---------- number field spinners off ---------- */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* ---------- marquee ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+/* ---------- slow float for hero accents ---------- */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.floaty { animation: floaty 6s ease-in-out infinite; }
+
+/* ---------- thin scrollbars ---------- */
+.slim-scroll::-webkit-scrollbar { width: 5px; height: 5px; }
+.slim-scroll::-webkit-scrollbar-track { background: transparent; }
+.slim-scroll::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 999px; }
+
+/* ---------- estimate pulse when value changes ---------- */
+@keyframes totalPulse {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.025); }
+  100% { transform: scale(1); }
+}
+.total-pulse { animation: totalPulse 0.45s var(--ease-spring); }
+@keyframes flashRow {
+  0% { background: var(--color-oak-tint); }
+  100% { background: transparent; }
+}
+
+/* ---------- tick marks for measuring ruler effect ---------- */
+.ruler {
+  background-image:
+    repeating-linear-gradient(to right, var(--color-line) 0 1px, transparent 1px 12px);
+  background-size: 100% 8px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 8px;
+}
+
+/* ============ PRINT — estimate sheet only ============ */
+@media print {
+  body { background: white; }
+  .no-print { display: none !important; }
+  .print-sheet { display: block !important; }
+  .grain::before { display: none; }
+  @page { margin: 14mm; }
+}
