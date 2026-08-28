@@ -9,20 +9,20 @@ import { useState } from "react";
 /* ------------------------------------------------------------------ */
 
 /* Curated from ELBI Modular's real project archive
-   (public/images/portfolio, served via the official Vercel site).
-   One strong shot per project batch — camera-timestamp filenames.
-   To swap a photo, just change its filename below, or to remove one,
-   delete its entry.                                                  */
-
-const pBase = "https://elbimodular.vercel.app/images/portfolio";
+   (elbimodular/public/images/portfolio).
+   6 premium, finished modular cabinet builds — NO people in frame,
+   selected to attract residential & commercial clients:
+   wardrobes, vanity, island/counter and smart hardware.
+   Files are copied locally to /public/images/portfolio so builds are
+   durable and don't depend on external CDN expiry. */
 
 export const WORKS: { src: string; kind: string; date: string }[] = [
-  { src: `${pBase}/IMG20210309144150.jpg`, kind: "Custom cabinetry", date: "Mar 2021" },
-  { src: `${pBase}/IMG20210412071728.jpg`, kind: "Custom cabinetry", date: "Apr 2021" },
-  { src: `${pBase}/IMG20210422174507.jpg`, kind: "Custom cabinetry", date: "Apr 2021" },
-  { src: `${pBase}/IMG20210422174557.jpg`, kind: "Custom cabinetry", date: "Apr 2021" },
-  { src: `${pBase}/IMG20210605163354.jpg`, kind: "Custom cabinetry", date: "Jun 2021" },
-  { src: `${pBase}/IMG20210612173823.jpg`, kind: "Custom cabinetry", date: "Jun 2021" },
+  { src: "/images/portfolio/IMG20230525123356.jpg", kind: "Built-in Wardrobe — Light Oak", date: "May 2023" },
+  { src: "/images/portfolio/IMG20231025170751.jpg", kind: "Luxury Vanity — Gold Vessels", date: "Oct 2023" },
+  { src: "/images/portfolio/IMG20231005110051.jpg", kind: "Modern Island & Counter", date: "Oct 2023" },
+  { src: "/images/portfolio/IMG20230525123408.jpg", kind: "Wardrobe Interior — Hanging & Drawers", date: "May 2023" },
+  { src: "/images/portfolio/IMG20230608171545.jpg", kind: "Corner Cabinet — Lazy Susan", date: "Jun 2023" },
+  { src: "/images/portfolio/IMG20230525123546.jpg", kind: "Modular Shelving — 8-Cube", date: "May 2023" },
 ];
 
 export const REAL_PHOTOS = {
