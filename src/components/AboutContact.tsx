@@ -1,7 +1,13 @@
-import { useState, type FormEvent } from "react";
-import { Check, ClipboardCheck, Send, ArrowUpRight } from "lucide-react";
+import { useEffect, useState, type FormEvent } from "react";
+import { Check, ClipboardCheck, Send, ArrowUpRight, ShieldCheck, ArrowRight } from "lucide-react";
 import { Eyebrow, Reveal } from "../lib/ui";
 import { FacebookIcon, MessengerIcon } from "../lib/icons";
+
+function genChallenge() {
+  const a = 2 + Math.floor(Math.random() * 8);
+  const b = 3 + Math.floor(Math.random() * 7);
+  return { a, b, answer: a + b };
+}
 
 /* --------------------------- 05 · about ELBI ------------------------ */
 
@@ -65,38 +71,82 @@ export function About() {
 /* ------------------------ 06 · start a project ---------------------- */
 
 export function Contact() {
-  const [name, setName] = useState("");
-  const [contact, setContact] = useState("");
-  const [city, setCity] = useState("");
-  const [type, setType] = useState("Kitchen");
-  const [notes, setNotes] = useState("");
-  const [sent, setSent] = useState(false);
+  const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [formError, setFormError] = useState<string | null>(null);
+  const [captcha, setCaptcha] = useState(() => genChallenge());
+  const [captchaInput, setCaptchaInput] = useState("");
+  const [captchaError, setCaptchaError] = useState<string | null>(null);
 
-  const submit = async (e: FormEvent) => {
+  useEffect(() => {
+    setCaptcha(genChallenge());
+  }, []);
+
+  function refreshCaptcha() {
+    setCaptcha(genChallenge());
+    setCaptchaInput("");
+    setCaptchaError(null);
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const text = [
-      "Hi ELBI Modular! I'd like to start a project.",
-      "",
-      `Name: ${name || "—"}`,
-      `Contact: ${contact || "—"}`,
-      `Location: ${city || "—"}`,
-      `Project: ${type}`,
-      notes ? `Notes: ${notes}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch {
-      /* clipboard unavailable — still open Messenger */
+    const form = e.currentTarget;
+    const honeypot = (form.elements.namedItem("bot-field") as HTMLInputElement | null)?.value;
+    if (honeypot) return;
+
+    if (parseInt(captchaInput, 10) !== captcha.answer) {
+      setCaptchaError("Incorrect answer. Try again.");
+      refreshCaptcha();
+      return;
     }
-    window.open("https://m.me/Elbimodular", "_blank", "noopener");
-    setSent(true);
-    setTimeout(() => setSent(false), 6000);
+
+    setFormState("submitting");
+    setFormError(null);
+    setCaptchaError(null);
+
+    const dataObj: Record<string, string> = {};
+    new FormData(form).forEach((v, k) => (dataObj[k] = v.toString()));
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/ryancuevas53@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: dataObj.name,
+          phone: dataObj.phone,
+          email: dataObj.email || "not provided",
+          project_type: dataObj["project-type"],
+          location: dataObj.location,
+          budget: dataObj.budget || "Not specified",
+          message: dataObj.message,
+          _subject: `New ELBI inquiry (Cost Calculator): ${dataObj["project-type"]} — ${dataObj.name}`,
+          _template: "table",
+          _captcha: "false",
+          _cc: "giangowzxc@gmail.com",
+        }),
+      });
+      const data = await response.json().catch(() => ({} as Record<string, string>));
+      if (!response.ok)
+        throw new Error(
+          (data as { message?: string }).message ||
+            (data as { error?: string }).error ||
+            `Server error ${response.status}`,
+        );
+      form.reset();
+      setCaptchaInput("");
+      refreshCaptcha();
+      setFormState("success");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setFormError(msg);
+      setFormState("error");
+      console.error(err);
+    }
   };
 
   const inputCls =
     "w-full rounded-2xl border border-line bg-cream px-5 py-4 text-[14.5px] text-ink placeholder:text-faint/70 outline-none focus:border-oak focus:ring-2 focus:ring-oak/20 transition-all";
+  const darkInputCls =
+    "!bg-cream/[0.06] !border-cream/15 !text-cream placeholder:!text-cream/40 focus:!ring-oak/40 focus:!border-oak";
 
   return (
     <section id="quote" className="no-print py-20 md:py-28 bg-sand/50 border-t border-line">
@@ -165,83 +215,179 @@ export function Contact() {
             </Reveal>
           </div>
 
-          {/* form */}
+          {/* form — now sends via email to both addresses */}
           <Reveal delay={160}>
-            <form onSubmit={submit} className="rounded-3xl border border-line bg-ink text-cream p-7 md:p-9">
-              <p className="font-mono text-[10.5px] tracking-[0.26em] uppercase text-cream/45 mb-7">
-                Project inquiry · sent via Messenger
+            <div className="rounded-3xl border border-line bg-ink text-cream p-7 md:p-9">
+              <p className="font-mono text-[10.5px] tracking-[0.26em] uppercase text-cream/45 mb-1">
+                Project inquiry · response within 24h
+              </p>
+              <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-oak-tint/90 mb-7">
+                Sent to giangowzxc@gmail.com & ryancuevas53@gmail.com
               </p>
 
-              <div className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Your name"
-                    className={`${inputCls} !bg-cream/[0.06] !border-cream/15 !text-cream placeholder:!text-cream/40 focus:!ring-oak/40 focus:!border-oak`}
-                  />
-                  <input
-                    value={contact}
-                    onChange={(e) => setContact(e.target.value)}
-                    placeholder="Mobile / Viber"
-                    className={`${inputCls} !bg-cream/[0.06] !border-cream/15 !text-cream placeholder:!text-cream/40 focus:!ring-oak/40 focus:!border-oak`}
-                  />
+              {formState === "success" ? (
+                <div className="text-center py-8" role="status">
+                  <span className="mx-auto grid place-items-center w-12 h-12 rounded-full bg-oak text-cream mb-4">
+                    <Check size={24} />
+                  </span>
+                  <p className="font-mono text-[10.5px] tracking-[0.26em] uppercase text-oak-tint mb-2">Inquiry received</p>
+                  <h3 className="font-display text-[22px] font-medium leading-tight">Thank you. Your project is on our radar.</h3>
+                  <p className="mt-2 text-[13.5px] text-cream/60 leading-relaxed">
+                    We&apos;ve sent your details to our team. We&apos;ll review and get back to you — usually within the day.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setFormState("idle")}
+                    className="mt-6 inline-flex items-center gap-2 text-[13px] text-oak-tint hover:text-cream transition-colors"
+                  >
+                    Send another inquiry <ArrowRight size={15} />
+                  </button>
                 </div>
-                <input
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  placeholder="City / barangay (e.g. Los Baños, Laguna)"
-                  className={`${inputCls} !bg-cream/[0.06] !border-cream/15 !text-cream placeholder:!text-cream/40 focus:!ring-oak/40 focus:!border-oak`}
-                />
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* honeypot */}
+                  <p className="hidden" aria-hidden="true">
+                    <label>
+                      Do not fill this out: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                    </label>
+                  </p>
 
-                <div>
-                  <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream/45 mb-2.5">Project type</p>
-                  <div className="flex flex-wrap gap-2">
-                    {["Kitchen", "Wardrobe", "TV / storage wall", "Other"].map((t) => (
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <label className="block">
+                      <span className="sr-only">Full name</span>
+                      <input
+                        name="name"
+                        required
+                        autoComplete="name"
+                        placeholder="Your name *"
+                        className={`${inputCls} ${darkInputCls}`}
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="sr-only">Phone</span>
+                      <input
+                        name="phone"
+                        type="tel"
+                        required
+                        autoComplete="tel"
+                        placeholder="Mobile / Viber *"
+                        className={`${inputCls} ${darkInputCls}`}
+                      />
+                    </label>
+                  </div>
+
+                  <input
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    placeholder="Email (optional)"
+                    className={`${inputCls} ${darkInputCls}`}
+                  />
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <label className="block">
+                      <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream/45 mb-1.5 block">Project type *</span>
+                      <select
+                        name="project-type"
+                        required
+                        defaultValue="Kitchen"
+                        className={`${inputCls} ${darkInputCls}`}
+                      >
+                        <option>Kitchen</option>
+                        <option>Wardrobe</option>
+                        <option>TV / storage wall</option>
+                        <option>Vanity / bathroom</option>
+                        <option>Office / commercial</option>
+                        <option>Other</option>
+                      </select>
+                    </label>
+                    <label className="block">
+                      <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-cream/45 mb-1.5 block">Budget</span>
+                      <select name="budget" defaultValue="" className={`${inputCls} ${darkInputCls}`}>
+                        <option value="">Not sure yet</option>
+                        <option>Under ₱100,000</option>
+                        <option>₱100,000–₱250,000</option>
+                        <option>₱250,000–₱500,000</option>
+                        <option>₱500,000+</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <input
+                    name="location"
+                    required
+                    placeholder="City / barangay (e.g. Los Baños, Laguna) *"
+                    className={`${inputCls} ${darkInputCls}`}
+                  />
+
+                  <textarea
+                    name="message"
+                    required
+                    rows={4}
+                    placeholder="Tell us about the space — wall size, must-haves, timeline… *"
+                    className={`${inputCls} ${darkInputCls} resize-none`}
+                  />
+
+                  {/* captcha */}
+                  <div className="rounded-2xl border border-cream/15 bg-cream/[0.04] p-4">
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <ShieldCheck size={14} className="text-oak-tint" />
+                      <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-cream/70">Security check</span>
+                      <span className="ml-auto font-mono text-[10px] text-cream/40">Quick verification</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-[13px] text-cream/90">
+                        What is <strong className="text-cream">{captcha.a} + {captcha.b}</strong>?
+                      </span>
+                      <input
+                        value={captchaInput}
+                        onChange={(e) => setCaptchaInput(e.target.value.replace(/\D/g, ""))}
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        placeholder="?"
+                        aria-label={`What is ${captcha.a} plus ${captcha.b}?`}
+                        required
+                        className="w-16 rounded-xl border border-cream/15 bg-cream/[0.06] px-3 py-2 text-center text-[14px] text-cream placeholder:text-cream/30 outline-none focus:border-oak focus:ring-1 focus:ring-oak"
+                      />
                       <button
                         type="button"
-                        key={t}
-                        onClick={() => setType(t)}
-                        className={`rounded-full px-4 py-2 text-[13px] border transition-all ${
-                          type === t
-                            ? "bg-oak border-oak text-cream"
-                            : "border-cream/20 text-cream/70 hover:border-oak-tint hover:text-oak-tint"
-                        }`}
+                        onClick={refreshCaptcha}
+                        aria-label="Get new challenge"
+                        className="text-[13px] text-cream/50 hover:text-oak-tint transition-colors"
                       >
-                        {t}
+                        ↻
                       </button>
-                    ))}
+                    </div>
+                    {captchaError && (
+                      <p className="mt-2 text-[11px] text-red-300" role="alert">
+                        {captchaError}
+                      </p>
+                    )}
                   </div>
-                </div>
 
-                <textarea
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
-                  placeholder="Tell us about the space — wall size, must-haves, timeline…"
-                  rows={4}
-                  className={`${inputCls} !bg-cream/[0.06] !border-cream/15 !text-cream placeholder:!text-cream/40 focus:!ring-oak/40 focus:!border-oak resize-none`}
-                />
+                  {formState === "error" && formError && (
+                    <p className="rounded-xl bg-red-500/10 border border-red-500/20 px-4 py-3 text-[12.5px] text-red-200" role="alert">
+                      {formError}
+                    </p>
+                  )}
 
-                <button
-                  type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2.5 rounded-full bg-oak text-cream px-6 py-4 text-[14.5px] font-semibold hover:bg-oak-deep transition-colors"
-                >
-                  <Send size={15} />
-                  Send inquiry via Messenger
-                </button>
+                  <button
+                    type="submit"
+                    disabled={formState === "submitting"}
+                    className="w-full inline-flex items-center justify-center gap-2.5 rounded-full bg-oak text-cream px-6 py-4 text-[14.5px] font-semibold hover:bg-oak-deep transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    <Send size={15} />
+                    {formState === "submitting" ? "Sending inquiry…" : "Send inquiry via email"}
+                  </button>
 
-                {sent && (
-                  <p className="flex items-center gap-2 justify-center text-[12.5px] text-oak-tint">
-                    <Check size={14} />
-                    Message copied! Paste it in the Messenger chat that just opened.
+                  <p className="text-center text-[11px] text-cream/40 leading-relaxed">
+                    No commitments, no spam — replies go to <span className="text-cream/60">giangowzxc@gmail.com</span> &amp;{" "}
+                    <span className="text-cream/60">ryancuevas53@gmail.com</span>. We reply with the next step and possible survey
+                    schedule.
                   </p>
-                )}
-
-                <p className="text-center text-[11px] text-cream/40 leading-relaxed">
-                  No commitments, no spam — we reply with the next step and possible survey schedule.
-                </p>
-              </div>
-            </form>
+                </form>
+              )}
+            </div>
           </Reveal>
         </div>
       </div>
