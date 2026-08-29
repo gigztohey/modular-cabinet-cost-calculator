@@ -29,17 +29,17 @@ export const REAL_PHOTOS = {
   hero: {
     real: "https://elbimodular.vercel.app/images/project-installation.jpg",
     fallback: "/images/hero-kitchen.jpg",
-    alt: "Modular kitchen cabinets in Laguna — ELBI Modular L-shaped installation in Santa Rosa",
+    alt: "Modular kitchen cabinets Philippines — ELBI Modular L-shaped installation, based in Laguna serving Luzon Visayas Mindanao",
   },
   approach: {
     real: "https://elbimodular.vercel.app/images/project-wardrobe.webp",
     fallback: "/images/craft-detail.jpg",
-    alt: "Built-in wardrobe and cabinetry by ELBI Modular in Laguna — made to measure since 2010",
+    alt: "Built-in wardrobe and cabinetry by ELBI Modular — made to measure since 2010, Manila & nationwide service",
   },
   band: {
     real: "/images/project-island.jpg",
     fallback: "/images/project-island.jpg",
-    alt: "Finished modular kitchen island by ELBI Modular in Laguna — custom built for Laguna homes",
+    alt: "Finished modular kitchen island by ELBI Modular — custom built in Laguna for homes across Luzon, Visayas & Mindanao",
   },
 };
 

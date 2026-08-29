@@ -23,25 +23,25 @@ export default function Hero() {
           <div className="order-1">
             <Reveal>
               <p className="inline-flex items-center gap-2 font-mono text-[10.5px] tracking-[0.28em] uppercase text-oak-deep bg-oak-tint/70 border border-oak/20 rounded-full px-4 py-2 mb-8">
-                Custom cabinetry & installation · since 2010 · Los Baños, Laguna
+                Custom cabinetry & installation · since 2010 · Laguna-based, serving Luzon, Visayas & Mindanao
               </p>
             </Reveal>
 
             <Reveal delay={90}>
               <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.0] text-[clamp(2.7rem,6.6vw,5.2rem)]">
-                Modular Cabinets in Laguna
+                Modular Cabinets Philippines
                 <br />
                 <em className="text-oak font-light italic">Made for your space.</em>
               </h1>
-              <p className="mt-3 font-display text-[15px] md:text-[16px] text-oak/80 italic">Built for real life — since 2010</p>
+              <p className="mt-3 font-display text-[15px] md:text-[16px] text-oak/80 italic">Built for real life — since 2010 · Laguna to Luzon, Visayas & Mindanao</p>
             </Reveal>
 
             <Reveal delay={180}>
               <p className="mt-7 max-w-lg text-[16px] md:text-[17px] leading-relaxed text-ink-soft">
-                Thoughtful <a href="#works" className="underline decoration-oak/30 hover:text-oak-deep">modular cabinets in Laguna</a>, carefully made and professionally installed for homes in <strong>Santa Rosa, Biñan, Cabuyao, Calamba and Los Baños</strong> — with instant cost estimates before you call.
+                Thoughtful <a href="#works" className="underline decoration-oak/30 hover:text-oak-deep">modular cabinets</a>, carefully made and professionally installed for homes in <strong>Manila, nearby Laguna (Santa Rosa, Biñan, Cabuyao, Calamba, Los Baños)</strong> and nationwide across <strong>Luzon, Visayas &amp; Mindanao</strong> — with instant cost estimates before you call.
               </p>
               <p className="mt-3 max-w-lg text-[13px] font-mono tracking-wide text-faint">
-                Trusted by Laguna homeowners for 16 years — 500+ kitchens, wardrobes &amp; vanities completed since 2010.
+                Trusted for 16 years — 500+ kitchens, wardrobes &amp; vanities from Laguna to Luzon, Visayas &amp; Mindanao since 2010.
               </p>
             </Reveal>
 

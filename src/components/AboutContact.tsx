@@ -33,7 +33,7 @@ export function About() {
                 <h2 className="font-display font-medium tracking-[-0.02em] leading-[1.04] text-[clamp(2rem,4.4vw,3.5rem)]">
                   From a small garage
                   <br />
-                  <em className="italic font-light text-oak">to a trusted modular cabinet maker in Laguna — since 2010 (16 years).</em>
+                  <em className="italic font-light text-oak">to a trusted maker serving Luzon, Visayas &amp; Mindanao — since 2010.</em>
                 </h2>
               </Reveal>
               <Reveal delay={110}>
@@ -45,7 +45,7 @@ export function About() {
                     Garage → workshop → corporation
                   </span>
                   <span className="inline-flex items-center gap-2 rounded-full border border-line bg-sand/60 px-4 py-2 font-mono text-[10.5px] tracking-wide text-ink-soft">
-                    16 years · 500+ projects in Laguna
+                    16 years · 500+ projects — Luzon to Mindanao
                   </span>
                 </div>
               </Reveal>
@@ -61,7 +61,7 @@ export function About() {
                   &amp; finish choices, and one team from planning through installation.
                 </p>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-                  Today we specialize in <a href="#works" className="underline decoration-oak/30 hover:text-oak-deep">custom wardrobes and closets in Laguna</a> — from walk-in closets in South Forbes to built-in wardrobes in Santa Rosa condos — all made to measure.
+                  Today we specialize in <a href="#works" className="underline decoration-oak/30 hover:text-oak-deep">custom wardrobes and closets</a> — from walk-in closets in South Forbes to built-in wardrobes in Santa Rosa condos — now serving <strong>Luzon, Visayas &amp; Mindanao</strong>, with base in Laguna and projects in Manila &amp; nearby areas — all made to measure.
                 </p>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
                   That simplicity attracts clients — homes that feel more organized, businesses that open
@@ -243,14 +243,14 @@ export function Contact() {
               </p>
               <h2 className="font-display font-medium tracking-[-0.02em] leading-[1.04] text-[clamp(2rem,4.4vw,3.5rem)]">
                 Let&apos;s build your modular kitchen
-                <em className="italic font-light text-oak"> or wardrobe in Laguna.</em>
+                <em className="italic font-light text-oak"> or wardrobe — anywhere in the Philippines.</em>
               </h2>
               <p className="mt-7 max-w-md text-[15.5px] leading-relaxed text-ink-soft">
                 Tell us a little about your project. We&apos;ll review the details and get
                 back to discuss the next step — usually within the day.
               </p>
               <p className="mt-3 max-w-md text-[14px] leading-relaxed text-ink-soft">
-                Planning a full <a href="#estimator" className="underline decoration-oak/30 hover:text-oak-deep">kitchen renovation in Laguna</a>? We handle 3D design, fabrication and installation — serving Laguna, Cavite and Metro Manila. <strong>16 years of modular cabinet making in Los Baños, Laguna — referenced by interior designers and contractors across Santa Rosa, Nuvali and Calamba.</strong>
+                Planning a full <a href="#estimator" className="underline decoration-oak/30 hover:text-oak-deep">kitchen renovation</a>? We handle 3D design, fabrication and installation — based in Laguna, serving <strong>Manila, nearby Laguna and nationwide across Luzon, Visayas &amp; Mindanao</strong>. <strong>16 years in Los Baños — referenced by interior designers and contractors nationwide.</strong>
               </p>
             </Reveal>
 

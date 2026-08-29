@@ -45,7 +45,7 @@ export default function Process() {
                 </h2>
                 <p className="mt-7 max-w-md text-[15.5px] leading-relaxed text-ink-soft">
                   We keep every stage understandable, collaborative, and focused on a finish
-                  you&apos;ll be proud to live with. Over 16 years, we&apos;ve refined a 4-step workflow — from 3D design to fitted installation — so Laguna homeowners know exactly what happens next.
+                  you&apos;ll be proud to live with. Over 16 years, we&apos;ve refined a 4-step workflow — from 3D design to fitted installation — so homeowners from Manila to nearby Laguna and across Luzon, Visayas &amp; Mindanao know exactly what happens next.
                 </p>
                 <div className="mt-9 flex gap-8 max-w-md">
                   {[
@@ -92,11 +92,11 @@ export default function Process() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/20" />
         <div className="relative h-full mx-auto max-w-7xl px-5 md:px-8 flex items-end pb-12 md:pb-16">
           <Reveal>
-            <p className="font-display text-cream text-[clamp(1.6rem,3.8vw,2.8rem)] leading-[1.15] max-w-2xl">
-              Built in Laguna. Installed with care
-              <br />
-              <em className="italic font-light text-oak-tint">across CALABARZON & Metro Manila.</em>
-            </p>
+              <p className="font-display text-cream text-[clamp(1.6rem,3.8vw,2.8rem)] leading-[1.15] max-w-2xl">
+                Built in Laguna. Installed with care
+                <br />
+                <em className="italic font-light text-oak-tint">Manila, nearby Laguna &amp; across Luzon, Visayas &amp; Mindanao.</em>
+              </p>
           </Reveal>
         </div>
       </section>

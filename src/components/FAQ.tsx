@@ -2,36 +2,36 @@ import { Eyebrow, Reveal } from "../lib/ui";
 
 const FAQS = [
   {
-    q: "How much do modular kitchen cabinets cost in Laguna?",
-    a: "Modular kitchen cabinets in Laguna cost ₱9,900–₱21,800 per linear meter at ELBI Modular, depending on material (MDF vs marine plywood) and finish. A typical L-shaped kitchen (4 meters) ranges ₱120,000–₱280,000 including countertop. Get an instant estimate on our page and we confirm final price after free site measurement in Santa Rosa, Biñan or Calamba.",
+    q: "How much do modular kitchen cabinets cost in the Philippines?",
+    a: "Modular kitchen cabinets cost ₱9,900–₱21,800 per linear meter at ELBI Modular, depending on material (MDF vs marine plywood) and finish. A typical L-shaped kitchen (4 meters) ranges ₱120,000–₱280,000 including countertop. Based in Laguna, we serve Manila and nearby Laguna areas plus Luzon, Visayas & Mindanao — get an instant estimate and we confirm final price after site measurement.",
   },
   {
-    q: "How long does a kitchen renovation take in Laguna?",
-    a: "Most modular kitchen projects in Laguna take 3–4 weeks from 3D approval to handover, plus 1–3 days for installation. Wardrobes and vanities are 2–3 weeks. Timeline depends on size and material availability, confirmed after site visit in Los Baños or nearby areas.",
+    q: "How long does a kitchen renovation take?",
+    a: "Most modular kitchen projects take 3–4 weeks from 3D approval to handover, plus 1–3 days for installation. Wardrobes and vanities are 2–3 weeks. Timeline depends on size and material, confirmed after site visit — we coordinate schedules for Manila, nearby Laguna and nationwide across Luzon, Visayas & Mindanao.",
   },
   {
     q: "What materials do you use — MDF, marine plywood, HDF or laminate?",
-    a: "We build with 18mm marine plywood for kitchens (water-resistant), MDF/HDF with HPL or acrylic for wardrobes, and phenolic board for premium. Finishes include PVC, HPL, acrylic and laminate with soft-close or Blum hardware and granite or quartz tops. We recommend the best mix for your budget and Laguna humidity.",
+    a: "We build with 18mm marine plywood for kitchens (water-resistant), MDF/HDF with HPL or acrylic for wardrobes, and phenolic board for premium. Finishes include PVC, HPL, acrylic and laminate with soft-close or Blum hardware and granite or quartz tops. We recommend the best mix for your budget and Philippines humidity.",
   },
   {
-    q: "Do you do built-in wardrobes and custom closets in Laguna condos?",
-    a: "Yes — we specialize in custom built-in wardrobes and closets in Laguna for homes and condos in Santa Rosa, Nuvali, South Forbes and Calamba. Made to measure with swing, sliding or walk-in options, floor-to-ceiling up to 3m, with drawers, mirrors and LED. Free 3D design included.",
+    q: "Do you do built-in wardrobes and custom closets for condos?",
+    a: "Yes — we specialize in custom built-in wardrobes and closets for homes and condos in Manila, nearby Laguna (Santa Rosa, Nuvali, South Forbes, Calamba) and across Luzon, Visayas & Mindanao. Made to measure with swing, sliding or walk-in options, floor-to-ceiling up to 3m, with drawers, mirrors and LED. Free 3D design included.",
   },
   {
     q: "Do you provide 3D design before fabrication?",
     a: "Yes, every project includes free 3D modular kitchen design. You see your kitchen, TV wall unit or bathroom vanity in 3D before we cut. Revisions are included until you approve.",
   },
   {
-    q: "Which areas do you serve around Laguna?",
-    a: "Based in Los Baños, Laguna, we serve Santa Rosa, Biñan, Cabuyao, Calamba, San Pedro, Nuvali, South Forbes, Alabang and Metro Manila for modular cabinets, kitchen renovation and office cabinets. Mobilization fee depends on location — shown in the estimator.",
+    q: "Which areas do you serve — Laguna, Manila, Luzon, Visayas & Mindanao?",
+    a: "Based in Los Baños, Laguna, we serve Manila, nearby Laguna (Santa Rosa, Biñan, Cabuyao, Calamba, San Pedro, Nuvali, South Forbes, Alabang) and nationwide across Luzon, Visayas & Mindanao for modular cabinets, kitchen renovation and office cabinets. Mobilization/delivery depends on location — shown in the estimator.",
   },
   {
     q: "What is included in the installation?",
-    a: "Professional installation is included — delivery, fitting, alignment, handles, hinges and clean turnover. We measure to ±2mm precision, install on-site and check every door before handover.",
+    a: "Professional installation is included — delivery, fitting, alignment, handles, hinges and clean turnover. We measure to ±2mm precision, install on-site and check every door before handover, whether in Laguna, Manila or any Luzon, Visayas & Mindanao site.",
   },
   {
-    q: "How do I get a quote for modular cabinets in Laguna?",
-    a: "Measure your wall length, use our instant cost calculator or message us on Facebook with photos and location. We reply within 24 hours with a realistic per-linear-meter estimate and schedule a free site visit in Laguna.",
+    q: "How do I get a quote for modular cabinets?",
+    a: "Measure your wall length, use our instant cost calculator or message us on Facebook with photos and location (Manila, Laguna or any Luzon/Visayas/Mindanao area). We reply within 24 hours with a realistic per-linear-meter estimate and schedule a site visit.",
   },
 ];
 
@@ -52,12 +52,12 @@ export default function FAQ() {
         <Reveal>
           <Eyebrow index="05b">FAQ</Eyebrow>
           <h2 className="font-display font-medium tracking-[-0.02em] leading-[1.04] text-[clamp(2rem,4.4vw,3.5rem)]">
-            Modular cabinets in Laguna
+            Modular cabinets Philippines
             <br />
             <em className="italic font-light text-oak">— your questions, answered.</em>
           </h2>
           <p className="mt-4 max-w-2xl text-[14.5px] leading-relaxed text-ink-soft">
-            Pricing, materials and timelines for kitchens, wardrobes &amp; renovations — from our 16 years serving Laguna homeowners.
+            Pricing, materials and timelines for kitchens, wardrobes &amp; renovations — based in Laguna, serving Manila, nearby Laguna and nationwide across Luzon, Visayas &amp; Mindanao since 2010.
           </p>
         </Reveal>
 

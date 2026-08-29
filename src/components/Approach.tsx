@@ -37,7 +37,7 @@ export default function Approach() {
                   Beautifully practical
                 </p>
                 <h2 className="font-display font-medium tracking-[-0.02em] leading-[1.04] text-[clamp(2rem,4.4vw,3.5rem)]">
-                  Good cabinetry in Laguna
+                  Good cabinetry
                   <br />
                   should make your space feel <em className="italic font-light text-oak">simpler.</em>
                 </h2>
@@ -47,7 +47,7 @@ export default function Approach() {
                   one-size-fits-all catalog.
                 </p>
                 <p className="mt-4 max-w-md text-[14px] leading-relaxed text-ink-soft">
-                  We design and install <a href="#estimator" className="underline decoration-oak/30 hover:text-oak-deep">kitchen cabinets for homeowners in Santa Rosa, Biñan, Cabuyao, Calamba, San Pedro and Nuvali</a> — each <a href="#works" className="underline decoration-oak/30 hover:text-oak-deep">modular kitchen design</a> measured and built to fit your exact walls.
+                  We design and install <a href="#estimator" className="underline decoration-oak/30 hover:text-oak-deep">kitchen cabinets for homeowners in Manila, nearby Laguna (Santa Rosa, Biñan, Cabuyao, Calamba, San Pedro, Nuvali)</a> and nationwide across <a href="#works" className="underline decoration-oak/30 hover:text-oak-deep">Luzon, Visayas &amp; Mindanao</a> — each <a href="#works" className="underline decoration-oak/30 hover:text-oak-deep">modular kitchen design</a> measured and built to fit your exact walls.
                 </p>
                 <a
                   href="#about"
