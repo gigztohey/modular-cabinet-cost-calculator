@@ -45,7 +45,7 @@ export default function Process() {
                 </h2>
                 <p className="mt-7 max-w-md text-[15.5px] leading-relaxed text-ink-soft">
                   We keep every stage understandable, collaborative, and focused on a finish
-                  you&apos;ll be proud to live with.
+                  you&apos;ll be proud to live with. Over 16 years, we&apos;ve refined a 4-step workflow — from 3D design to fitted installation — so Laguna homeowners know exactly what happens next.
                 </p>
                 <div className="mt-9 flex gap-8 max-w-md">
                   {[

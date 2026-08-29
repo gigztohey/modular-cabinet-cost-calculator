@@ -29,17 +29,17 @@ export const REAL_PHOTOS = {
   hero: {
     real: "https://elbimodular.vercel.app/images/project-installation.jpg",
     fallback: "/images/hero-kitchen.jpg",
-    alt: "Real ELBI Modular kitchen installation",
+    alt: "Modular kitchen cabinets in Laguna — ELBI Modular L-shaped installation in Santa Rosa",
   },
   approach: {
     real: "https://elbimodular.vercel.app/images/project-wardrobe.webp",
     fallback: "/images/craft-detail.jpg",
-    alt: "Real ELBI Modular cabinetry and workshop projects",
+    alt: "Built-in wardrobe and cabinetry by ELBI Modular in Laguna — made to measure since 2010",
   },
   band: {
     real: "/images/project-island.jpg",
     fallback: "/images/project-island.jpg",
-    alt: "Finished modular kitchen by ELBI Modular",
+    alt: "Finished modular kitchen island by ELBI Modular in Laguna — custom built for Laguna homes",
   },
 };
 

@@ -29,16 +29,19 @@ export default function Hero() {
 
             <Reveal delay={90}>
               <h1 className="font-display font-medium tracking-[-0.02em] leading-[1.0] text-[clamp(2.7rem,6.6vw,5.2rem)]">
-                Made for your space.
+                Modular Cabinets in Laguna
                 <br />
-                <em className="text-oak font-light italic">Built for real life.</em>
+                <em className="text-oak font-light italic">Made for your space.</em>
               </h1>
+              <p className="mt-3 font-display text-[15px] md:text-[16px] text-oak/80 italic">Built for real life — since 2010</p>
             </Reveal>
 
             <Reveal delay={180}>
               <p className="mt-7 max-w-lg text-[16px] md:text-[17px] leading-relaxed text-ink-soft">
-                Thoughtful modular cabinetry, carefully made and professionally installed
-                for homes and businesses — now with instant cost estimates before you even call.
+                Thoughtful <a href="#works" className="underline decoration-oak/30 hover:text-oak-deep">modular cabinets in Laguna</a>, carefully made and professionally installed for homes in <strong>Santa Rosa, Biñan, Cabuyao, Calamba and Los Baños</strong> — with instant cost estimates before you call.
+              </p>
+              <p className="mt-3 max-w-lg text-[13px] font-mono tracking-wide text-faint">
+                Trusted by Laguna homeowners for 16 years — 500+ kitchens, wardrobes &amp; vanities completed since 2010.
               </p>
             </Reveal>
 

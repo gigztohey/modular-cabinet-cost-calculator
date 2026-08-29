@@ -5,6 +5,7 @@ import Works from "./components/Works";
 import Estimator from "./components/Estimator";
 import Process from "./components/Process";
 import { About, Contact } from "./components/AboutContact";
+import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
         <Estimator />
         <Process />
         <About />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

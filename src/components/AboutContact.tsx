@@ -33,19 +33,19 @@ export function About() {
                 <h2 className="font-display font-medium tracking-[-0.02em] leading-[1.04] text-[clamp(2rem,4.4vw,3.5rem)]">
                   From a small garage
                   <br />
-                  <em className="italic font-light text-oak">to a small corporation.</em>
+                  <em className="italic font-light text-oak">to a trusted modular cabinet maker in Laguna — since 2010 (16 years).</em>
                 </h2>
               </Reveal>
               <Reveal delay={110}>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <span className="inline-flex items-center gap-2 rounded-full border border-line bg-sand/60 px-4 py-2 font-mono text-[10.5px] tracking-wide text-ink-soft">
-                    <span className="w-2 h-2 rounded-full bg-oak" /> Est. 2010
+                    <span className="w-2 h-2 rounded-full bg-oak" /> Est. 2010 — 16 years
                   </span>
                   <span className="inline-flex items-center gap-2 rounded-full border border-line bg-sand/60 px-4 py-2 font-mono text-[10.5px] tracking-wide text-ink-soft">
                     Garage → workshop → corporation
                   </span>
                   <span className="inline-flex items-center gap-2 rounded-full border border-line bg-sand/60 px-4 py-2 font-mono text-[10.5px] tracking-wide text-ink-soft">
-                    15+ years of hard work
+                    16 years · 500+ projects in Laguna
                   </span>
                 </div>
               </Reveal>
@@ -59,6 +59,9 @@ export function About() {
                   word-of-mouth, we grew into a <strong className="font-semibold text-ink">small corporation with a streamlined workflow</strong> that
                   makes everything <em className="italic text-oak">simpler</em> for clients: clear instant estimates, guided material
                   &amp; finish choices, and one team from planning through installation.
+                </p>
+                <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
+                  Today we specialize in <a href="#works" className="underline decoration-oak/30 hover:text-oak-deep">custom wardrobes and closets in Laguna</a> — from walk-in closets in South Forbes to built-in wardrobes in Santa Rosa condos — all made to measure.
                 </p>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
                   That simplicity attracts clients — homes that feel more organized, businesses that open
@@ -239,12 +242,15 @@ export function Contact() {
                 Project inquiry · response within 24h
               </p>
               <h2 className="font-display font-medium tracking-[-0.02em] leading-[1.04] text-[clamp(2rem,4.4vw,3.5rem)]">
-                Let&apos;s build a space that works
-                <em className="italic font-light text-oak"> better for you.</em>
+                Let&apos;s build your modular kitchen
+                <em className="italic font-light text-oak"> or wardrobe in Laguna.</em>
               </h2>
               <p className="mt-7 max-w-md text-[15.5px] leading-relaxed text-ink-soft">
                 Tell us a little about your project. We&apos;ll review the details and get
                 back to discuss the next step — usually within the day.
+              </p>
+              <p className="mt-3 max-w-md text-[14px] leading-relaxed text-ink-soft">
+                Planning a full <a href="#estimator" className="underline decoration-oak/30 hover:text-oak-deep">kitchen renovation in Laguna</a>? We handle 3D design, fabrication and installation — serving Laguna, Cavite and Metro Manila. <strong>16 years of modular cabinet making in Los Baños, Laguna — referenced by interior designers and contractors across Santa Rosa, Nuvali and Calamba.</strong>
               </p>
             </Reveal>
 

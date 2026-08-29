@@ -5,9 +5,10 @@ import { WORKS } from "../lib/images";
 import { FacebookIcon } from "../lib/icons";
 
 const TRUST = [
-  { icon: BadgeCheck, label: "Crafting cabinets since 2010" },
+  { icon: BadgeCheck, label: "Crafting cabinets since 2010 — 16 years" },
   { icon: Ruler, label: "Made to measure · ±2 mm precision" },
   { icon: ShieldCheck, label: "Checked & fitted before turnover" },
+  { icon: BadgeCheck, label: "500+ projects — trusted in Laguna since 2010" },
 ];
 
 export default function Works() {
@@ -23,15 +24,15 @@ export default function Works() {
               </span>
             </p>
             <h2 className="font-display font-medium tracking-[-0.02em] leading-[1.04] text-[clamp(2rem,4.4vw,3.5rem)]">
-              Straight from our sites —
+              Modular cabinets & built-in wardrobes
               <br />
-              <em className="italic font-light text-oak">authentic builds, made to measure.</em>
+              <em className="italic font-light text-oak">real builds from our sites in Laguna.</em>
             </h2>
           </Reveal>
           <Reveal delay={110}>
             <p className="text-[15px] leading-relaxed text-ink-soft max-w-md lg:justify-self-end">
-              Every image below is a real ELBI Modular project, photographed by our own team.
-              What you see is exactly the standard you can expect in your home.
+              Every image below is a real ELBI Modular project in Laguna, photographed by our own team.
+              From <a href="#services" className="underline decoration-oak/30 hover:text-oak-deep">built-in cabinets and TV wall units</a> to shoe and office cabinets — what you see is the standard you can expect in Santa Rosa, Calamba, Biñan and beyond.
             </p>
           </Reveal>
         </div>
